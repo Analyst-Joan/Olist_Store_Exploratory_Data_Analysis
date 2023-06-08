@@ -1,2 +1,6 @@
-# Olist_Store_Exploratory_Data_Analysis
-A Power BI Exploratory Data Analysis (EDA) and Visualization Project carried out to hone my DAX and Data Modelling Skills
+# Sales Analysis of Olist E-commerce Store
+![](Olist_Store_logo.PNG)
+
+[Image Credit](https://techcrunch.com/wp-content/uploads/2021/04/Olist-HQ-in-Brazil-1.jpg?w=1390&crop=1)
+
+_**Details coming soon**_
