@@ -59,36 +59,26 @@ The dataset was extracted and imported into Power BI’s Power Query for data va
 - Redundant/irrelevant columns were removed where applicable.
 
 _The dataset had 8 tables after validation and cleaning._ Details of cleaning per table can be found **[here]( https://github.com/Analyst-Joan/Olist_Store_Exploratory_Data_Analysis/blob/main/Data_Cleaning_Steps_in_Power_Query.pdf)**. Below are snapshots of the transformed tables.
-![](olist_order_items.PNG)
-![](olist_orders.PNG)
-![](olist_customer.PNG) --- ![](olist_geolocation.PNG), 
-![](olist_products.PNG)
-![](olist_order_payments.PNG)
 
-
-| Cat pics                            | Dog pics                            |
+| Olist_order_items                   | Olist_orders                        |
 | ----------------------------------- | ----------------------------------- |
-| ![cat](https://example.com/cat.png) | ![dog](https://example.com/dog.png) |
+| ![](olist_order_items.PNG)          | ![](olist_orders.PNG)               |
 
-| Cat pics                            | Dog pics                            |
+| Olist_customers                     | Olist_Sellers                       |
 | ----------------------------------- | ----------------------------------- |
-| ![cat](https://example.com/cat.png) | ![dog](https://example.com/dog.png) |
+| ![](olist_customer.PNG)             | ![](olist_sellers.PNG)              |
 
-| Olist_order_payments                     | Dog pics                            |
+|  Olist_products                     |  Olist_order_payments               |
 | ----------------------------------- | ----------------------------------- |
-| ![](olist_order_payments.PNG) | ![dog](https://example.com/dog.png) |
+| ![](olist_products.PNG)             | ![](olist_order_payments.PNG) |
 
-| Olist_Sellers                       | Order_reviews                       |
+| Olist_geolocation                   | Olist_Order_reviews                 |
 | ----------------------------------- | ----------------------------------- |
-| ![](olist_sellers.PNG)              | ![](olist_order_reviews.PNG)        |
-
-| Date_Table                          |                                     |
-| ----------------------------------- | ----------------------------------- |
-| ![](dimdate2.PNG)                   | ![](dimdate2.PNG)                   |
+| ![](olist_geolocation.PNG)          | ![](olist_order_reviews.PNG)        |
 
 
 ## Data Modelling
-The data to be used for the analysis is ![Normalised](zip file upload), that is, located in various tables, and thus requires appropriate modelling. The Model from the cleaned data is a **Star Schema** comprising of:
+The data to be used for the analysis is [Normalised](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce), that is, located in various tables, and thus requires appropriate modelling. The Model from the cleaned data is a **Star Schema** comprising of:
 **_One Fact table:_** `Olist_Order_items`, which contains the lowest level of granularity, including quantitative and numeric measures associated with the e-commerce platform which can be aggregated during Analysis.
 
 **_One Factless fact table:_** `Olist_Orders`, which contains dates to track sales/purchase events and foreign keys that only reference a dimension but do not have any associated measures that can be aggregated neither is it descriptive. It serves more like a bridge table between the dimensions to establish relationships.
@@ -96,6 +86,11 @@ The data to be used for the analysis is ![Normalised](zip file upload), that is,
 **_Six dimension tables:_** `Olist_customers`, `Olist_geolocation`, `Olist_order_payments`, `Olist_order_reviews`, `Olist_products`, `Olist_sellers` . These contains attributes that describe the data on the fact tables and are to be used to constrain/filter queries on the fact tables (i.e. to limit inquiries to the primary data)
 
 A date dimension table `**"DimDate"**` was then created in power query using M Query language gotten from **[online research](https://devinknightsql.com/2015/06/16/creating-a-date-dimension-with-power-query/)**, which I adjusted to include Fiscal year, Fiscal Month and fiscal Quarter. 
+
+| Date_Table                          |                                     |
+| ----------------------------------- | ----------------------------------- |
+| ![](dimdate1.PNG)                   | ![](dimdate2.PNG)                   |
+
 This was created to have a comprehensive view of the date data, enable flexibility of time-based analysis, and creating hierarchical relationship at different levels of granularity (such as day, week, month, etc.), which facilitates drill-down capabilities in visualization.
 
 The 7 dimension tables were then modelled/connected to the fact tables using Primary and foreign keys, that is, the common columns between them.
@@ -110,9 +105,11 @@ The 7 dimension tables were then modelled/connected to the fact tables using Pri
 - olist_order_payment table using "order_id"
 - olist_order_reviews table using "order_id"
 - DimDate table Using "Date/ order_purchase_date"
+
 _(Olist_geolocation Table was connected to the olist_customers table via the Zip_code_prefix)_
 
 ![](Olist_Data_model.PNG)
+
  The relationships between the tables are mainly one-to-many/many-to-one, except for the one between the customer and order table, which is a one-to-one relationship.
 
 ## Data Exploration and Visualization in Power BI
@@ -123,13 +120,16 @@ The total revenue generated by Olist E-commerce Store between September 2016 & S
 Total Revenue = 
 CALCULATE(
     SUM(olist_order_payments[payment_value]),
-    olist_orders[order_status] = "delivered"
+      olist_orders[order_status] = "delivered"
 )
 ```
 Orders with status as "delivered" were used to determine the total revenue as only delivered orders contributes to the actual/assured revenue generated.
-Exploring the revenue generation over time, we see from our visual below, that there has been a continuous increase in revenue over the 3-year period in review, with the highest increase occurring between 2016 and 2017. 
+Exploring the revenue generation over time, we see from our visual below, that there has been a continuous increase in revenue over the 3-year period in review, with the highest increase occurring between 2016 and 2017.
+
 ![](Olist_total_revenue.PNG)
-Drilling down to the Months, the trend of revenue increase over time is still observed, but with a sharp dip in the month of September. Hmmm! what would have been the cause of this dip? To, check this, I drilled down further to dates and observed that most of the sales record available occurred from 3rd October 2016 to 29th August 2018, hence the September record is mostly for one year -2017. Also, the analysis at the date level, also presented a sharp increase in revenue on **24th November 2017**, which I discovered was a **Black Friday** - _A day that is characterized by sales of products at highly discounted rates._ This may have encouraged the large purchases made by customers on the store on that day.
+
+Drilling down to the Months, the trend of revenue increase over time is still observed, but with a sharp dip in the month of September. Hmmm! 🤔 what would have been the cause of this dip? To, check this, I drilled down further to dates and observed that most of the sales record available occurred from 3rd October 2016 to 29th August 2018, hence the September record is mostly for one year -2017. Also, the analysis at the date level, also presented a sharp increase in revenue on **24th November 2017**, which I discovered was a **Black Friday** - _A day that is characterized by sales of products at highly discounted rates._ This may have encouraged the large purchases made by customers on the store on that day.
+
 ![](Olist_total_revenue2.PNG)
 
 Let’s now evaluate the orders placed, perhaps a similar trend occurred on Black Friday.
@@ -141,6 +141,7 @@ A total of **99,441 orders** were placed on the Olist e-commerce store, of which
 ![](Orders_placed.PNG)
 
 Looking through the months and years, I observed a trend of increase in orders over time as was seen in the evaluation of the Total revenue over time. The highest number of successful orders (7289) was placed in November 2017. This would be as a result of the **Black Friday Effect** on 24th November 2017.
+
 ![](Delivered_Orders_trend.PNG)
 
 ### 3: What are the most popular product categories on Olist, and how do their sales volumes
@@ -149,6 +150,7 @@ Having observed the trend in customer orders and revenue generated, it is import
 In terms of popularity, the most popular product category is the **Bed_Bath_Table** having 9,417 orders, with the next two in the top 3 popular product categories being Health_Beauty (8,836 orders) and Sports_Leisure (7,720 orders). 
 
 ![]( Product_pop_Sales_vol.PNG)
+
 However, in terms of sales volume, the ** Health_Beauty** product category has the highest sales volume of R$1,419,509.89, followed by Watches_Gifts category (R$1,269,684.96) and Bed_Bath_Table (R$1,249,411.56) being the 3rd in highest sales volume.
 
 ### 4: What is the average order value (AOV) on Olist, and how does this vary by product category or payment method?
@@ -157,9 +159,9 @@ From the preceding visual, we see that the most popular product did not have the
 The average order value on the Olist store is **R$159.85**. This was gotten by dividing the Total revenue by total number of orders that are delivered using the DAX calculated measure below:
 ```
 Average Order Value = 
-DIVIDE ([Total Revenue], 
-CALCULATE(COUNTROWS('olist_orders'), 
-olist_orders[order_status] IN {"Delivered"})
+                  DIVIDE ([Total Revenue], 
+                      CALCULATE(COUNTROWS('olist_orders'), 
+                         olist_orders[order_status] IN {"Delivered"})
 )
 ```
 ![](Average_order_value_AOV.PNG)
@@ -173,13 +175,14 @@ Exploring the AOV across the product categories and payment types, we see that t
 As a platform that connects merchants to customers, it is important to know how many of the merchants / sellers on the platform have been active over time. The metric I used is, _A seller is said to be active if s/he has made at least a successful sale within a 30-day period_. A successful sale is taken to be orders that have been delivered to the customer. The measure below was used to compute the Active sellers.
 ```
 Active_Sellers = CALCULATE(
-    DISTINCTCOUNT('olist_order_items'[seller_id]),
-   	 'olist_orders'[order_status] = "delivered",
-    		'olist_orders'[order_purchase_date] >= MIN('olist_orders'[order_purchase_date]) - 30,
-   		'olist_orders'[order_purchase_date] <= MAX('olist_orders'[order_purchase_date])
-    )
+                     DISTINCTCOUNT('olist_order_items'[seller_id]),
+                      	 'olist_orders'[order_status] = "delivered",
+                          		'olist_orders'[order_purchase_date] >= MIN('olist_orders'[order_purchase_date]) - 30,
+   	                          	'olist_orders'[order_purchase_date] <= MAX('olist_orders'[order_purchase_date])
+                   )
 ```
 This measure counts the distinct number of seller IDs in the 'olist_orders_items' table where the order status is "delivered" and the order purchase date falls within the last 30 days from the maximum order purchase date. This gives the number of active sellers as **2,970**.
+
 ![](Active_Sellers.PNG)
 
 Going further, I evaluated the variation of Active sellers on the platform over time and observed that there has been a consistent increase in active sellers across the years and months. 
@@ -193,6 +196,7 @@ Now we know how many of the Olist sellers are active, we will now evaluate how c
 Average Rating = AVERAGE('olist_order_reviews'[review_score])
 ```
 The sales performance was then evaluated using the total revenue per seller and average rating. The resulting visual shows that Sellers with high ratings tend to have higher sales outcome than those with lower ratings, with the highest performing seller having an average rating of 4.12.
+
 ![]( Seller_rate_perf.PNG)
 
 
@@ -200,15 +204,15 @@ The sales performance was then evaluated using the total revenue per seller and 
 Based on the previous visual, we observed that more than 50% sellers were rated fairly high. We now want to see if the seeming satisfaction led to repeat purchases by the customers. To determine this, I created a calculated column to filter out orders that are repeat purchases based on the customers’ unique id. The DAX formula below was used to create the column:
 ```
 Repeat_Purchases = CALCULATE(
-IF(COUNT('olist_orders'[order_id])>1,1,0),
-ALLEXCEPT(olist_customers,olist_customers[customer_unique_id]))
+                      IF(COUNT('olist_orders'[order_id])>1,1,0),
+                          ALLEXCEPT(olist_customers,olist_customers[customer_unique_id]))
 ```
 The formula calculates whether a customer has made more than one purchase or not by checking if the count of 'order_id' in the `olist_orders` table is greater than 1. If it is, it returns 1, indicating that the customer has made repeat purchases. Otherwise, it returns 0, indicating that the customer has made only one purchase. Afterwards I created a calculated measure to get the total count of customers that had repeat purchases i.e. customers whose count of 'order_id' in the `olist_orders` table returned 1. The DAX measure is shown below:
 ```
 Repeat Purchase Customers = CALCULATE( 
-DISTINCTCOUNT(olist_customers[customer_unique_id]),
-olist_customers[Repeat_Purchases] = 1,
-olist_orders[order_status] = "Delivered")
+                                DISTINCTCOUNT(olist_customers[customer_unique_id]),
+                                   olist_customers[Repeat_Purchases] = 1,
+                                       olist_orders[order_status] = "Delivered")
  ```
 
 The measure calculates the distinct count of customers who have made repeat purchases and have their order status as ‘delivered’. Delivered orders alone were taken into account, as they represent true repeat purchases. Our computation output shows that 2,979 customers made repeat purchases.
@@ -237,10 +241,10 @@ Based on the resulting visual shown above, the product with the highest sales am
 As we continue to evaluate Olist customers’ behaviour, from repeat purchases to ratings for sellers/products, we will now look into cancelled orders, to understand its effect on the performance of sellers/merchants on the Olist platform. It will also be important to know factors that can influence these order cancellations and seller performance. To explore this stage, I computed the average order cancellation rate using the measure below and its result gave **0.63%**.
 ```
 Average Order Cancellation Rate = 
-    DIVIDE(
-        CALCULATE(COUNTROWS(olist_orders),
-    	olist_orders[order_status] = "canceled"),
-COUNTROWS(olist_orders))
+                                 DIVIDE(
+                                    CALCULATE(COUNTROWS(olist_orders),
+    	                                  olist_orders[order_status] = "canceled"),
+                                          COUNTROWS(olist_orders))
 ```
 
 ![](Avg_Order_Cancel_Rate.PNG)
@@ -274,7 +278,8 @@ Exploring further across the locations and products in the visual below, we see 
 
 
 ### 12: How do customer reviews and ratings affect sales and product performance on Olist?
-Based on response to similar questions, Q6 and Q8, we have seen that sellers and products with the highest revenue/sales performance have ratings above average (4.07). 
+Based on response to similar questions, Q6 and Q8, we have seen that sellers and products with the highest revenue/sales performance have ratings above average (4.07).
+
 ![]( Sales_Prod_perf.PNG)
 
 Exploring further, we observe from the visual above, that products with average review score of “2.0” had lesser revenue than products with average review score of “1.0”. This can be due to the quantity of the products sold that fell within the 1.0 rating, which is about 3 times that of the ones within the 2.0 rating. Hence, we can say that as rating/review score increases, the total revenue increases. 
@@ -284,15 +289,16 @@ Olist is not a non-profit organisation, hence it is important to know products t
 
 ```
 Gross_Profit_Margin = DIVIDE(
-    CALCULATE(SUM('olist_order_items'[price]),
-olist_orders[order_status]="delivered"),
-[Total Revenue])
+                         CALCULATE(SUM('olist_order_items'[price]),
+                            olist_orders[order_status]="delivered"),
+                               [Total Revenue])
 ```
 The resulting Gross Profit Margin computed is **85.73%**.
 
 ![]( Gross_profit_margin.PNG)
 
 Exploring across the categories, we observe that the product category with the highest gross profit margin is **"Computers"** with 95.71%, followed by the “Small_Appliances_Home_Oven_And_Coffee" category (94.56%), and then “Portable_kitchen_and_food_preparators" category (93.04%). Visual is shown below. 
+
 ![]( Gross_profit_margin2.PNG)
 
 To increase profitability across different categories, Olist platform can Collaborate/Strengthen relationships with sellers and negotiate better terms such as bulk discounts, exclusive deals, etc.  They can also work with the sellers to improve their pricing strategy, ensuring that the pricing of their products are competitive, but not so low as to lose revenue. They may also consider using tiered pricing, where different prices are charged for the same product depending on the quantity or other factors.
@@ -309,15 +315,18 @@ _**Work in progress**_
 
 ### 15: Geolocation having high customer density. Calculate customer retention rate according to geolocations
 Finally, we will evaluate the spread of Olist customer base in terms of location. There were 99,441 customers for the 3-year period in review. In terms of high Customer density, the top three locations are **Sao Paulo, Rio de Janeiro, and Minas Gerais**
+
 ![](Cust_density.PNG)
+
 But does High Customer density equate high Customer retention rate? To check for this, the overall Customer retention rate was computed using the DAX measure below. The results was 3.0
 ```
 Customer Retention Rate % = 
-    DIVIDE('olist_customers'[Repeat_purchase_customers],
-        COUNTROWS('olist_customers')) 
-            * 100
+                          DIVIDE('olist_customers'[Repeat_purchase_customers],
+                            COUNTROWS('olist_customers')) 
+                              * 100
 ```
 Exploring further, we see that in terms of customer retention, we have the location with the highest Customer retention rate to be **Acre**, despite being among the last 3 location with the least customer density. The next two high customer retention locations are **Rondonia and Mato Grosso**.
+
 ![](Cust_retention.PNG)
 
 ## Key Insights:
