@@ -147,11 +147,11 @@ Looking through the months and years, I observed a trend of increase in orders o
 ### 3: What are the most popular product categories on Olist, and how do their sales volumes
 compare to each other?
 Having observed the trend in customer orders and revenue generated, it is important to consider the products advertised on the Olist platform for sale – Which of these product categories are popular? Does popularity affect their sales volume?
-In terms of popularity, the most popular product category is the **Bed_Bath_Table** having 9,417 orders, with the next two in the top 3 popular product categories being Health_Beauty (8,836 orders) and Sports_Leisure (7,720 orders). 
+In terms of popularity, the most popular product category is the **Bed_Bath_Table** having 9,417 orders, with the next two in the top 3 popular product categories being **Health_Beauty (8,836 orders)** and **Sports_Leisure (7,720 orders)**. 
 
 ![]( Product_pop_Sales_vol.PNG)
 
-However, in terms of sales volume, the ** Health_Beauty** product category has the highest sales volume of R$1,419,509.89, followed by Watches_Gifts category (R$1,269,684.96) and Bed_Bath_Table (R$1,249,411.56) being the 3rd in highest sales volume.
+However, in terms of sales volume, the **Health_Beauty** product category has the highest sales volume of R$1,419,509.89, followed by Watches_Gifts category (R$1,269,684.96) and Bed_Bath_Table (R$1,249,411.56) being the 3rd in highest sales volume.
 
 ### 4: What is the average order value (AOV) on Olist, and how does this vary by product category or payment method?
 From the preceding visual, we see that the most popular product did not have the highest sales volume, hence, we probe further to evaluate the average monetary value of each order placed by the Olist customers, that is, the Average order value (AOV) and their variation across the product categories & payment methods used by the customers.
@@ -315,7 +315,7 @@ Additionally, they can consider phasing out or re-evaluating low-margin products
 
 **Marketing Spend** refers to _the amount of money allocated to marketing activities_, which directly influences the reach and impact of Olist's promotional efforts.
 
-**Channel mix**, on the other hand, refers to _the distribution of marketing efforts across different mediums/channels such as social media, email marketing, Partnership with Influencers,, etc._  The more diverse the channels mix, the more likely it will be to reach wider audience and potential leads that can be converted to customers. This will definitely have impact on the sales outcome.
+**Channel mix**, on the other hand, refers to _the distribution of marketing efforts across different mediums/channels such as social media, email marketing, Partnership with Influencers, etc._  The more diverse the channels mix, the more likely it will be to reach wider audience and potential leads that can be converted to customers. This will definitely have impact on the sales outcome.
 
 Therefore, Increasing marketing spend by having sufficient allocation of funds to diverse channel mix can potentially increase brand visibility, encourage new customer acquisition, and ultimately drive sales. However, it is pertinent that the business prioritizes channels with high leads conversion rates, while striking a balance between the marketing budget and the return on investment (ROI) generated.
 
@@ -387,9 +387,9 @@ By responding to the business questions, I have achieved the goal of  helping Ol
 
  
 
-Also, working on this dataset expounded my knowledge on e-commerce business metrics, and helped me improve my skills in Power BI DAX and Data modelling. You can interact with my report visuals [here](https://app.powerbi.com/groups/me/reports/e773b44f-cd2e-4f38-b19a-0e2c973498c7?ctid=ab104c60-6de6-475d-a20f-893f69d679a4&pbi_source=linkShare)
+Also, working on this dataset expounded my knowledge on e-commerce business metrics, and helped me improve my skills in Power BI DAX and Data modelling. I hope to build a dashboard from this report and provide an accessible link for interaction with the visuals soon.
 
-Comments, constructive criticisms and feedbacks are anticipated.
+Your candid comments, constructive criticisms and feedbacks are anticipated.
 
 ![](Thanks.jpeg)
 
