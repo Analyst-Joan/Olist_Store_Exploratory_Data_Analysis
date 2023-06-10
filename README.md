@@ -387,11 +387,11 @@ By responding to the business questions, I have achieved the goal of  helping Ol
 
  
 
-Also, working on this dataset expounded my knowledge on e-commerce business metrics, and helped me improve my skills in Power BI DAX and Data modelling. You can interact with my report visuals [here]()
+Also, working on this dataset expounded my knowledge on e-commerce business metrics, and helped me improve my skills in Power BI DAX and Data modelling. You can interact with my report visuals [here](https://app.powerbi.com/groups/me/reports/e773b44f-cd2e-4f38-b19a-0e2c973498c7?ctid=ab104c60-6de6-475d-a20f-893f69d679a4&pbi_source=linkShare)
 
 Comments, constructive criticisms and feedbacks are anticipated.
 
-![](Thanks.jpg)
+![](Thanks.jpeg)
 
 
 
