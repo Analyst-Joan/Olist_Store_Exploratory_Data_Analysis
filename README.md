@@ -302,6 +302,7 @@ Exploring across the categories, we observe that the product category with the h
 ![]( Gross_profit_margin2.PNG)
 
 To increase profitability across different categories, Olist platform can Collaborate/Strengthen relationships with sellers and negotiate better terms such as bulk discounts, exclusive deals, etc.  They can also work with the sellers to improve their pricing strategy, ensuring that the pricing of their products are competitive, but not so low as to lose revenue. They may also consider using tiered pricing, where different prices are charged for the same product depending on the quantity or other factors.
+
 Secondly, they can use strategies that encourage customers to purchase additional products or upgrade their purchases by implementing cross-selling and upselling techniques. To do this, they can leverage Artificial intelligence (AI) technology and data analytics to offer personalized recommendations on the platform based on customer preferences and buying patterns. This can increase the average order value and contribute to higher profitability. As we can see from our analysis that the category with the highest profit margin also had the highest Average order value.
 
 ![](Profitability.PNG)
@@ -310,7 +311,20 @@ Additionally, they can consider phasing out or re-evaluating low-margin products
 
 ### 14: How does Olist's marketing spend and channel mix impact sales and customer acquisition costs, and how can the company optimize its marketing strategy to increase ROI?
 
-_**Work in progress**_
+
+
+**Marketing Spend** refers to _the amount of money allocated to marketing activities_, which directly influences the reach and impact of Olist's promotional efforts.
+
+**Channel mix**, on the other hand, refers to _the distribution of marketing efforts across different mediums/channels such as social media, email marketing, Partnership with Influencers,, etc._  The more diverse the channels mix, the more likely it will be to reach wider audience and potential leads that can be converted to customers. This will definitely have impact on the sales outcome.
+
+Therefore, Increasing marketing spend by having sufficient allocation of funds to diverse channel mix can potentially increase brand visibility, encourage new customer acquisition, and ultimately drive sales. However, it is pertinent that the business prioritizes channels with high leads conversion rates, while striking a balance between the marketing budget and the return on investment (ROI) generated.
+
+On **Customer Acquisition Costs (CAC)**, which is _the expenses incurred in acquiring a new customer,_ Olist can evaluate the cost-effectiveness of each acquisition channel by assessing the cost per lead, cost per customer, and customer lifetime value (CLTV) to determine the efficiency of marketing efforts. If the CAC is too high, adjustments can be made to optimize the strategy and reduce acquisition costs.
+
+
+To optimize its marketing strategy and increase ROI, Olist can consider leveraging data analytics to gain insights into customer behavior, preferences, and purchasing patterns.  Such data-driven decision making will enable Olist to identify high-performing channels, adjust the channel mix where applicable, and optimize resource allocation.
+
+Secondly, Olist can implement targeted marketing campaigns, where customer demographics, interests, and buying habits are analysed, and then, the messaging and promotional offers are tailored to meet specific customer segments. This can improve customer engagement, increase conversion of leads to Customer, and boost sales.
 
 
 ### 15: Geolocation having high customer density. Calculate customer retention rate according to geolocations
@@ -329,14 +343,62 @@ Exploring further, we see that in terms of customer retention, we have the locat
 
 ![](Cust_retention.PNG)
 
-## Key Insights:
-_**Work in progress**_
+## Key Insights
+
+- ‌Olist E-commerce Store generated a total revenue of 15.42 million Brazilian real(R$15,422,461.77) within the 3-year period in review. The high revenue may be attributed to presence of a wide range of product categories, competitive pricing, a user-friendly platform that attracts and retains customers, etc.
+
+- In 2017, ‌16.66% of the total revenue was generated in November, with the Black Friday sales (R$175,250.94) accounting for 15.19% of the total revenue generated in November 2017 (R$1,153,528.05). The  popularity of the "Black Friday" sales in Brazil will have enhanced this outcome.
+
+- ‌The platform recorded order delivery success rate of 97% for all placed orders.This is a pointer that Olist has a well-established logistics and Order fulfillment system in place, which ensures that customers receive their orders reliably and on time.
+
+- ‌The products categories with the highest Quantity of orders didn't always generate higher sales volume. This may be due to the price and quality of the products. 
+
+- ‌The Average order value (AOV) for the Olist platform is R$159.85 . This high AOV suggests that customers are buying more expensive products.
+
+-The Platform has ‌96% active sellers, which suggests that Olist provides a favorable platform for merchants/sellers to conduct their business, resulting in a consistent increase in the number of active sellers over time.
+
+- Customers that made repeat purchases generated ‌5.84% of the total revenue. The presence of repeat purchases indicates that Olist has a loyal customer base.
+
+- ‌Credit Cards are the major type of payment used by Olist Customers, followed by Boletos while the least used method is Debit card. This may be due to credit cards being more widely accepted than debit cards. This preferrence may also be due to the convenience and security offered by credit card payments.
+
+- ‌Products and Sellers with the highest sales performance had ratings that were above average(4.07). However, having the highest rating band of 5, didn't give rise to high sales performance for most products and sellers. This could be an indicator of Customer preferance for low priced goods.
+
+- The Average Order Cancellation rate is 0.63% - which can be indicative of high Customer Satisfaction. However, the Olist e-commerce platform lost R$143,255.60 due to cancelled Orders. Customer ratings and minimum price of Sellers' products were found to be key influencers of the Average Order Cancellation rate, which in turn impacts the number of orders placed and revenue generated.
+
+- ‌The product categories' sales trend are competitive as a new category always takes the lead as "Top selling product" each year.
+
+‌- The Gross profit margin is 85.73%. The product category, Computers, which has the highest order value also generated the highest Gross profit margin. This is likely due to higher-priced products or better profit margins on items in the category.
+
+- ‌Geolocation with the highest Customer density is Sao Paulo while the Geolocation with the highest Customer retention rate is Acre. However, the top 3 geolocations with high Customer densities also had retention rates above average(3.0). 
 
 ## Recommendations:
-_**Work in progress**_
 
-## Conclusion:
-_**Details coming soon**_
+- Olist should implement a seasonal/quarterly promotional events like the "Black Friday" sales to drive customer engagement, high product purchase and increased revenue.
+
+- They should strive to maintain high product quality and competitive pricing in order to minimize cancellations,  maximize customer satisfaction, and boost revenue.
+
+-  Loyalty programs such as special discounts for repeat customers and free shipping to targeted locations like Sao Paulo and Acre can be implemented to drive increase in repeat purchases, increase in customer retention, and acquisition of new Customers.
+
+- The high revenue & high profit margin suggests that the business has established a profitable online venture. They should consider investing in new products and services, expanding into new markets. This will drive new customer acquisition and ensure Olist stays ahead in the E-commerce business in Brazil.
+
+##Conclusion
+
+By responding to the business questions, I have achieved the goal of  helping Olist gain better insights into their e-commerce platform and know how to optimize available
+
+opportunities for growth. 
+
+Also, working on this dataset expounded my knowledge on e-commerce business metrics, and helped me improve my skills in Power BI DAX and Data modelling. You can interact with my report visuals [here]()
+
+Comments, constructive criticisms and feedbacks are anticipated.
+
+![](Thanks.jpg)
+
+
+
+
+
+
+
 
 
 
