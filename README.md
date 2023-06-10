@@ -355,7 +355,7 @@ Exploring further, we see that in terms of customer retention, we have the locat
 
 - ‌The Average order value (AOV) for the Olist platform is R$159.85 . This high AOV suggests that customers are buying more expensive products.
 
--The Platform has ‌96% active sellers, which suggests that Olist provides a favorable platform for merchants/sellers to conduct their business, resulting in a consistent increase in the number of active sellers over time.
+- The Platform has ‌96% active sellers, which suggests that Olist provides a favorable platform for merchants/sellers to conduct their business, resulting in a consistent increase in the number of active sellers over time.
 
 - Customers that made repeat purchases generated ‌5.84% of the total revenue. The presence of repeat purchases indicates that Olist has a loyal customer base.
 
@@ -367,7 +367,7 @@ Exploring further, we see that in terms of customer retention, we have the locat
 
 - ‌The product categories' sales trend are competitive as a new category always takes the lead as "Top selling product" each year.
 
-‌- The Gross profit margin is 85.73%. The product category, Computers, which has the highest order value also generated the highest Gross profit margin. This is likely due to higher-priced products or better profit margins on items in the category.
+- The Gross profit margin is 85.73%. The product category, Computers, which has the highest order value also generated the highest Gross profit margin. This is likely due to higher-priced products or better profit margins on items in the category.
 
 - ‌Geolocation with the highest Customer density is Sao Paulo while the Geolocation with the highest Customer retention rate is Acre. However, the top 3 geolocations with high Customer densities also had retention rates above average(3.0). 
 
@@ -381,11 +381,11 @@ Exploring further, we see that in terms of customer retention, we have the locat
 
 - The high revenue & high profit margin suggests that the business has established a profitable online venture. They should consider investing in new products and services, expanding into new markets. This will drive new customer acquisition and ensure Olist stays ahead in the E-commerce business in Brazil.
 
-##Conclusion
+## Conclusion
 
-By responding to the business questions, I have achieved the goal of  helping Olist gain better insights into their e-commerce platform and know how to optimize available
+By responding to the business questions, I have achieved the goal of  helping Olist gain better insights into their e-commerce platform and know how to optimize available opportunities for growth.
 
-opportunities for growth. 
+ 
 
 Also, working on this dataset expounded my knowledge on e-commerce business metrics, and helped me improve my skills in Power BI DAX and Data modelling. You can interact with my report visuals [here]()
 
